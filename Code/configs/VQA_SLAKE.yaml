@@ -1,0 +1,37 @@
+dataset: 'VQA_SLAKE'
+vqa_root: '../med-data/Slake/Slake1.0'
+
+split : {train: 'en_data/train_en_spread.json', val: 'en_data/val.json', test: 'en_data/test.json'}
+# split : {train: 'train_declar1.json', val: 'val.json', test: 'test_declar2.json'}
+label2ans: 'en_data/ids2ans.json'
+ans2label: 'en_data/ans2ids.json'
+pretrained: ''
+pretrain_resnet: 'ckpt/resnet152.pth'
+ans_tokens: "ans_tokens.json"
+answer_embeds_path: "answer_embeds/SLAKE_ans_embeds.pth"
+
+use_CPT: False
+# CPT_data_root: '../../nas/med-data/PathVQA/split/CPT/train_CPT2.json'
+# ans_qid_list: '../../nas/med-data/PathVQA/split/CPT/ans_qid_list2.json'
+# img_id_list: '.../../nas/med-data/PathVQA/split/CPT/img_id_list2.json'
+
+
+init_lr: 1e-5
+vit: 'base'
+vit_ckpt_layer: 0
+vit_grad_ckpt: False
+
+image_size: 480
+seq_max_len: 20
+
+batch_size_train: 16
+batch_size_test: 16
+CPT_size: 1
+
+alpha: 0.4
+
+# optimizer
+weight_decay: 0.02
+min_lr: 0
+max_epoch: 30
+

@@ -1,0 +1,32 @@
+dataset: 'PathVQA'
+# vqa_root: '../../nas/med-data/PathVQA'
+vqa_root: '../med-data/PathVQA/split'
+# split : {train: 'wo/train_wo.json', val: 'wo/val_wo.json', test: 'wo/test_wo.json'} # declaration/train_declar.json
+split : {train: 'declaration/train_declar.json', val: 'qas/val_vqa.pkl', test: 'qas/test_vqa.pkl'}  # trans/train_spread
+pretrian_split : {train: 'declaration/train_declar.json', test: 'declaration/test.json'}  # trans/train_spread_dec.json
+label2ans: 'id2ans.json'
+ans2label: 'ans2id.json'
+# pretrained: 'ckpt/PathVQA_77_best_1.pt'
+pretrain_resnet: ''
+ans_tokens: 'ans_tokens.json'
+answer_embeds_path: 'answer_embeds/PathVQA_ans_embeds.pth'
+
+pretrain: False
+
+init_lr: 1e-5
+vit: 'base'
+vit_ckpt_layer: 0
+vit_grad_ckpt: False
+
+image_size: 216 # 224
+seq_max_len: 20
+
+batch_size_train: 64 # 128
+batch_size_test: 64 # 128
+
+# optimizer
+weight_decay: 0.02
+min_lr: 0
+max_epoch: 60
+alpha: 0.4
+mlm_probability: 0.15

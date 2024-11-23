@@ -1,0 +1,34 @@
+dataset: 'SLAKE'
+vqa_root: '../med-data/Slake/Slake1.0'
+
+split : {train: 'train.json', val: 'val.json', test: 'test.json'}
+# split : {train: 'train_declar1.json', val: 'val.json', test: 'test_declar2.json'}
+label2ans: 'answer_list.json'
+ans2label: 'answer_dict.json'
+json_set_path: "../med-data/PMC_OA/json_set"
+retrieval_path: "../med-data/PMC_OA/retrieval/image_retrieval.json"
+RN50_path: "configs/RN50_fusion4.json"
+
+topk: 5
+context_length: 77
+question_length: 20
+
+init_lr: 1e-5
+vit: 'base'
+vit_ckpt_layer: 0
+vit_grad_ckpt: False
+
+image_size: 224
+seq_max_len: 20
+
+batch_size_train: 2
+batch_size_test: 4
+CPT_size: 1
+
+alpha: 0.4
+
+# optimizer
+weight_decay: 0.02
+min_lr: 0
+max_epoch: 30
+
